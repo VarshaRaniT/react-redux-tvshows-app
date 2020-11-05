@@ -1,1 +1,1 @@
-# react-redux-tvshows-app
+# react-redux-tvshows-app along with typescript
