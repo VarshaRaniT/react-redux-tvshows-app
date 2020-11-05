@@ -1,0 +1,3 @@
+@mixin make-gradient($start, $end, $primary) {
+  background: linear-gradient(40deg, $start, $end) !important;
+}
