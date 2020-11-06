@@ -38,7 +38,6 @@ const SearchBar: React.FC<SearchBarProps> = ({getTvShowDetailed, getSearchTvShow
         // history.push('/search-result');
         getSearch('')
     }
-    // console.log(count, "clear cound value")
     const classes = useStyles();
     return (
         // Render search component

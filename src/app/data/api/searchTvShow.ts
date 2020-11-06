@@ -2,7 +2,6 @@ import Axios from "axios";
 import Swal from "sweetalert2";
 import 'sweetalert2/src/sweetalert2.scss'
 export const fetchSearchTvShow = (callback: any, serachvalue: string) => {
-  // console.log(serachvalue, "api call data")
   let config = {
     headers: {
       "content-type": "application/json",

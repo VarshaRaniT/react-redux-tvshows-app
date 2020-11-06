@@ -34,7 +34,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
         fetchDetailedTvShow(getTvShowDetailed);
     }, [])
     const classes = useStyles();
-    // console.log(tvshowdetailedlist, "object for detailed")
+
     return (
         // render component
         <div className="detailed__component__wrap">
