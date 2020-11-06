@@ -5,10 +5,10 @@ import { TvShowProps, TvShowState } from '../../models';
 import { getTvShowList } from '../../actions/tvShowAction';
 import { fetchTvShowList } from "../../data/api/tvShowList";
 import { Link } from "react-router-dom";
-import  DetailedCard  from "./../commonComponents/detailedCard/detailedCard"
+import  DetailedCard  from "./../../components/commonComponents/detailedCard/detailedCard"
 // import material
 import { makeStyles, Grid, InputLabel, MenuItem, FormControl, Select} from '@material-ui/core';
-import CardComponent from "../commonComponents/card/card"
+import CardComponent from "./../../components/commonComponents/card/card"
 
 export interface TvShowListUIProps extends React.Component<TvShowProps, TvShowState> {
     tvshowlist: any

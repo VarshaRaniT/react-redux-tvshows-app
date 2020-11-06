@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router, Switch, Route
 } from "react-router-dom"
 import TvShowDetailedComponent from "./app/components/tvShowDetailed/tvShowDetailed";
-import TvShowListUI from "./app/components/tvShowList/tvShowList";
+import TvShowListUI from "./app/container/tvShowList/tvShowList";
 import HeaderComponent from "./app/components/header/header";
 import FooterComponent from "./app/components/footer/footer";
-import PageNotFound from "./app/components/pageNotFound/PageNotFound"
+import PageNotFound from "./app/container/pageNotFound/PageNotFound"
 import "./assets/scss/style.scss"
 
 const App = (rest: any) => (
