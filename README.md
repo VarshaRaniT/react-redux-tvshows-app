@@ -51,7 +51,7 @@ Your app is ready to be deployed!
 * Use React ternary operators
 * Always use full name instead of abbreviation in the name of your components. For example don’t use    “UDSettings”, use instead “UserDashboardSettings”.
 
-### Project dependencies and devDependencies ---------
+### Project dependencies and devDependencies
 1. axios:
    Promise based HTTP client for the browser.
    Please refer below url for more details:
