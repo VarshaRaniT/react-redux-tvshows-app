@@ -5,6 +5,7 @@ import { TvShowProps, TvShowState } from '../../models';
 import { getTvShowDetailed } from '../../actions/tvShowAction';
 import { fetchDetailedTvShow } from "../../data/api/detailedTvShow";
 import { makeStyles, Grid, CardContent, Typography, Card, Container } from '@material-ui/core';
+import StarIcon from '@material-ui/icons/Star';
 import DetailedCard from "./../commonComponents/detailedCard/detailedCard"
 export interface TvShowDetailedComponentProps extends React.Component<TvShowProps, TvShowState> {
     tvshowdetailedlist: any;
@@ -54,7 +55,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                                     Rating
                                         </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed rating">
-                                    {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
+                                <StarIcon className="custom__icon" />   {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
                                 </Typography>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     Language

@@ -12,7 +12,8 @@ export interface DetailedCardProps {
 const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
-        marginTop: "90px"
+        marginTop: "90px",
+        marginBottom:"50px"
     },
     media: {
         height: 360,
@@ -42,9 +43,6 @@ const DetailedCard: React.FC<DetailedCardProps> = ({ carddata }) => {
                                         <CardContent className={`${classes.pb0}`}>
                                             <Typography gutterBottom variant="h4" component="h2" >
                                                 {value.show.name}
-                                            </Typography>
-                                            <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed">
-                                                {value.show.rating && value.show.rating.average}
                                             </Typography>
                                             <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed">
                                                 {value.show.language}

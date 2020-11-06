@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles, CardContent, Typography, Card, CardActionArea } from '@material-ui/core';
+import StarIcon from '@material-ui/icons/Star';
 export interface CardComponentProps {
     tvshow: any
 }
@@ -32,8 +33,8 @@ const CardComponent: React.FC<CardComponentProps> = ({ tvshow }) => {
                         {tvshow.name}
                     </Typography>
 
-                    <Typography variant="body2" color="textSecondary" component="p" className="desc__text rating">
-                        {tvshow.rating.average}
+                    <Typography variant="body2" color="textSecondary" component="p" className="desc__text rating justify__center">
+                       <StarIcon className="custom__icon" /> {tvshow.rating.average}
                     </Typography>
                     {tvshow.genres.map((value: any, index: number) =>
                         <Typography key={index} gutterBottom component="span" className="geners_type">
