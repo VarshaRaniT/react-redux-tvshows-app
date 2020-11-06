@@ -1,4 +1,4 @@
-### Displaying All Top Rated TV shows ------------
+### Displaying All Top Rated TV shows
 
 Description: This application is useful for listing all the top rated tv shows and can choose the list of wished Genre.
 This app has been implemented using TVAmaze Db API which fetch all the show details available on server.
@@ -51,7 +51,7 @@ Your app is ready to be deployed!
 * Use React ternary operators
 * Always use full name instead of abbreviation in the name of your components. For example don’t use    “UDSettings”, use instead “UserDashboardSettings”.
 
-### Project dependencies and devDependencies ---------
+### Project dependencies and devDependencies
 1. axios:
    Promise based HTTP client for the browser.
    Please refer below url for more details:
