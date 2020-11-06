@@ -1,4 +1,4 @@
-### Displaying All Top Rated TV shows ------------
+### Displaying All Top Rated TV shows
 
 Description: This application is useful for listing all the top rated tv shows and can choose the list of wished Genre.
 This app has been implemented using TVAmaze Db API which fetch all the show details available on server.
