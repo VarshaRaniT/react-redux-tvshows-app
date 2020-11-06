@@ -33,8 +33,8 @@ const DetailedCard: React.FC<DetailedCardProps> = ({ carddata }) => {
                 <Grid container spacing={6}>
                     {carddata.map((value: any, index: number) => (
                         <Grid spacing={3} item xl={3} lg={4} md={6} sm={12} xs={12}>
-                            <Card key={index}>
-                                <Grid item xs={12}>
+                            <Card key={index} className="search__card__wrap">
+                                <Grid item xs={12} >
                                     <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                                         <div className="img__wrapper"> <img src={value.show.image && value.show.image.medium} alt="tv show"/></div>
                                     </Grid>
