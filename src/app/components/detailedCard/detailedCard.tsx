@@ -36,10 +36,10 @@ const DetailedCard: React.FC<DetailedCardProps> = ({ carddata }) => {
                         <Grid spacing={3} item xl={3} lg={4} md={6} sm={12} xs={12}>
                             <Card key={index} className="search__card__wrap">
                                 <Grid item xs={12} >
-                                    <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
+                                    <Grid item xs={12}>
                                         <div className="img__wrapper"> <img src={value.show.image && value.show.image.medium} alt="tv show"/></div>
                                     </Grid>
-                                    <Grid item xl={12} lg={12} md={12} sm={12} xs={12} className="content__wrapper">
+                                    <Grid item xs={12} className="content__wrapper">
                                         <CardContent className={`${classes.pb0}`}>
                                             <Typography gutterBottom variant="h4" component="h2" >
                                                 {value.show.name}

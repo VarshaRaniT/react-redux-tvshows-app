@@ -14,12 +14,12 @@ const App = (rest: any) => (
     <main className="container-fluid ml-0 px-0">
       <HeaderComponent {...rest} />
       <Switch>
-      <Route exact={true} path='/'  component={TvShowListUI} />/
+      <Route exact={true} path='/'  component={TvShowListUI} />
         <Route exact={true}
           path="/tvshow-list"
           component={TvShowListUI}
         />
-        <Route exact
+        <Route exact={true}
           path="/tvshow-detailed/:id"
           component={TvShowDetailedComponent}
         />

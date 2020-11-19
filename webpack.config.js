@@ -9,7 +9,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/App.tsx",
   node: {
       fs: 'empty',
       net: 'empty',
