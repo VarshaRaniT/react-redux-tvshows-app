@@ -6,9 +6,9 @@ export interface ButtonComponentProps {
 }
 
 const ButtonComponent: React.FC<ButtonComponentProps> = ({ btnText, onSearchChildClick }) => {
-    return (<span className="custom__btn__wrap"><Button className="custom__btn" variant="contained" color="secondary" onClick={onSearchChildClick}>
+    return (<div className="custom__btn__wrap"><Button className="custom__btn" variant="contained" color="secondary" onClick={onSearchChildClick}>
     {btnText}
-</Button></span>);
+</Button></div>);
 }
 
 export default ButtonComponent;

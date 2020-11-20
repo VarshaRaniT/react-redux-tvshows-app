@@ -33,7 +33,7 @@ const DetailedCard: React.FC<DetailedCardProps> = ({ carddata }) => {
             <Container>
                 <Grid container spacing={6}>
                     {carddata.map((value: any, index: number) => (
-                        <Grid spacing={3} item xl={3} lg={4} md={6} sm={12} xs={12}>
+                        <Grid spacing={3} item xl={6} lg={4} md={6} sm={12} xs={12}>
                             <Card key={index} className="search__card__wrap">
                                 <Grid item xs={12} >
                                     <Grid item xs={12}>

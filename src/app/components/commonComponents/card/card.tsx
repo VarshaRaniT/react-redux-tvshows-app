@@ -34,7 +34,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ tvshow }) => {
                     </Typography>
 
                     <Typography variant="body2" color="textSecondary" component="p" className="desc__text rating justify__center">
-                       <StarIcon className="custom__icon" /> {tvshow.rating.average}
+                    {tvshow.rating.average ? <StarIcon className="custom__icon" />: null}  {tvshow.rating.average}
                     </Typography>
                     {tvshow.genres.map((value: any, index: number) =>
                         <Typography key={index} gutterBottom component="span" className="geners_type">

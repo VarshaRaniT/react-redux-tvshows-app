@@ -55,7 +55,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                                     Rating
                                         </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed rating">
-                                <StarIcon className="custom__icon" />   {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
+                               {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average?  <StarIcon className="custom__icon" />: null}{tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
                                 </Typography>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     Language

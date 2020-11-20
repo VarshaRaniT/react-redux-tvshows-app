@@ -5,10 +5,32 @@ import { TvShowProps, TvShowState } from '../../models';
 import { getTvShowList } from '../../actions/tvShowAction';
 import { fetchTvShowList } from "../../data/api/tvShowList";
 import { Link } from "react-router-dom";
-import  DetailedCard  from "../../components/detailedCard/detailedCard"
+import DetailedCard from "../../components/detailedCard/detailedCard"
 // import material
-import { makeStyles, Grid, InputLabel, MenuItem, FormControl, Select} from '@material-ui/core';
-import CardComponent from "./../../components/commonComponents/card/card"
+import { makeStyles, Grid, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
+import CardComponent from "./../../components/commonComponents/card/card";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+    superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 export interface TvShowListUIProps extends React.Component<TvShowProps, TvShowState> {
     tvshowlist: any
@@ -28,8 +50,8 @@ const useStyles = makeStyles(() => ({
     formControl: {
         minWidth: 160,
     },
-    textCenter:{
-        textAlign:'left'
+    textCenter: {
+        textAlign: 'left'
     }
 }));
 const TvShowListUI: React.FC<TvShowListUIProps> = ({ tvshowlist, getTvShowList, searchlist }) => {
@@ -63,11 +85,16 @@ const TvShowListUI: React.FC<TvShowListUIProps> = ({ tvshowlist, getTvShowList, 
     })
     //  filter tv show list on the basis of genres
     let filteredAction: any[] = []
-    tvshowlist.forEach((e: any) => {
-        if (e.genres.includes(genres)) {
-            filteredAction.push(e);
-        }
-    });
+    if (genres == "") {
+        filteredAction = tvshowlist;
+    }
+    else {
+        tvshowlist.forEach((e: any) => {
+            if (e.genres.includes(genres)) {
+                filteredAction.push(e);
+            }
+        });
+    }
     // sorting tv show list
     let selectedTvShow;
     if (genres === '') {
@@ -86,25 +113,28 @@ const TvShowListUI: React.FC<TvShowListUIProps> = ({ tvshowlist, getTvShowList, 
                 <div className="custom__container__spacing light__black__bck">
                     <div className="genres__type">{genres === '' ? <h3>All TV Shows</h3> : <h3>{genres}</h3>}</div>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id="genres">Select Genres</InputLabel>
-                        <Select className={classes.textCenter} labelId="genres" id="genres" open={open} onClose={handleClose} onOpen={handleOpen}
+                        {/* <InputLabel id="genres">Select Genres</InputLabel> */}
+                        <Select className={classes.textCenter} displayEmpty
+                            labelId="genres" id="genres" open={open} onClose={handleClose} onOpen={handleOpen}
                             value={genres}
                             onChange={handleChange}
                         >
                             {/* create select menu for genres */}
+                            <MenuItem value="">{"All TV Shows"}</MenuItem>
                             {Object.keys(genresMap).map((value: any, i: number) => <MenuItem key={value} value={value}>{value}</MenuItem>)}
                         </Select>
                     </FormControl>
                 </div>
-                <div className="show__container__wrapper custom__container__spacing">
+                <Carousel swipeable={false} centerMode={true} 
+                    draggable={false} responsive={responsive} containerClass="show__container__wrapper custom__container__spacing">
                     {sortedArray.map((value: any) => (
-                        <Grid item xl={4} lg={3} md={3} sm={6} xs={12} key={value.id} className="card__wrap">
+                        <Grid key={value.id} className="card__wrap">
                             <Link to={`/tvshow-detailed/${value.id}`}  >
                                 <CardComponent tvshow={value} />
                             </Link>
                         </Grid>
                     ))}
-                </div>
+                </Carousel>
             </div> : <DetailedCard carddata={searchlist} />}
         </div>
     )

@@ -156,6 +156,12 @@ a.btn__link {
   width: 100%;
   background-color: $white;
   border-radius: 4px;
+  .custom__btn__wrap{
+  .custom__btn{
+      height: 42px;
+      margin-left: 10px;
+  }
+  }
 }
 .border__frame{
   border: 14px solid $secondaryColor;
@@ -234,20 +240,28 @@ footer {
 .img__wrapper img {
   max-width: 100%;
 }
-.show__container__wrapper {
-  display: -webkit-box;
-  overflow-y: auto;
-}
 .custom__container__spacing{
+  > ul > li{
+    padding: 0 7px;
+    a{
+      overflow: hidden;
+    }
+  }
+  .react-multiple-carousel__arrow{
+    background-color: $redColor!important;
+  }
+  .img__wrapper__main {
+    height: 350px;
+    overflow: hidden;
+}
   margin: 10px 15px;
   padding: 10px 0;
-  width: calc(100% - 30px);
   > div{
     padding: 0 10px;
   }
   .geners_type {
     font-size: 10px;
-    padding: 5px 7px;
+    padding: 3px 5px;
     background-color: $white;
     margin: 5px;
     border-radius: 20px;
@@ -263,8 +277,6 @@ footer {
   }
 }
 .card__wrap .img__wrapper__main {
-  height: 230px;
-  overflow: hidden;
   img{
     width: 100%;
   }
@@ -272,7 +284,6 @@ footer {
     padding-top: 0;
 }
 }
-
 .text_heading_show{
     font-family: cursive;
     color: $redColor,
@@ -283,14 +294,15 @@ footer {
 }
 .card_structure{
     height: auto;
-    max-width: 420px;
-    // min-height: 340px;
 }
 .header_background{
     background-color: $bckColor ;
 }
 .search__show__wrap{
-    background-color: $bckColor ;  
+    background-color: $bckColor;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
 }
 // error page style
 .page__not__found {
