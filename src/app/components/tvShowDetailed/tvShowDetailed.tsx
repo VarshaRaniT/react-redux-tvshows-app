@@ -6,7 +6,7 @@ import { getTvShowDetailed } from '../../actions/tvShowAction';
 import { fetchDetailedTvShow } from "../../data/api/detailedTvShow";
 import { makeStyles, Grid, CardContent, Typography, Card, Container } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
-import DetailedCard from "../commonComponents/detailedCard/detailedCard";
+import DetailedCard from "../searchCard/searchCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 

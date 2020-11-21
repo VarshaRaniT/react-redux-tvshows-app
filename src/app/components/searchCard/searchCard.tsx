@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { makeStyles, Grid, CardContent, Typography, Card, Container } from '@material-ui/core';
-import { Link } from "react-router-dom";
+import { makeStyles, CardContent, Typography, Card} from '@material-ui/core';
+import thumbnailImage from'./../../../assets/images/thumnail.jpg';
 export interface DetailedCardProps {
 
 }
@@ -25,11 +25,10 @@ const useStyles = makeStyles(() => ({
 }));
 const DetailedCard: React.FC<DetailedCardProps> = ({ carddata }) => {
     const classes = useStyles();
-    console.log(carddata, "fdjhfjd hdfjhdf hdfhjd")
     return (
         // render component
             <Card className="card__wrapper">
-                    <div className="img__wrapper__main"> <img src={carddata.show.image && carddata.show.image.medium} alt="tv" /></div>
+                    <div className="img__wrapper__main">{carddata.show.image?<img src={carddata.show.image && carddata.show.image.medium} alt="tv show image" />:<img src={thumbnailImage} alt="dummy thumbnail image" />}</div>
                     <CardContent className={`${classes.pb0} ${classes.cardContent} content__wrapper`}>
                         <Typography gutterBottom variant="h6" component="h6" className="genres__name">
                             {carddata.show.name}
