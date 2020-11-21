@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "90px"
     },
     media: {
-        height: 200,
+        maxHeight: 200,
         backgroundSize: 'cover',
         backgroundPosition: '0 0'
     },

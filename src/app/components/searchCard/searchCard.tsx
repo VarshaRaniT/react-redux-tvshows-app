@@ -11,7 +11,7 @@ export interface DetailedCardProps {
 // component style
 const useStyles = makeStyles(() => ({
     media: {
-        height: 200,
+        maxHeight: 200,
         backgroundSize: 'contain',
         backgroundPosition: "center center",
     },
@@ -29,17 +29,17 @@ const DetailedCard: React.FC<DetailedCardProps> = ({ carddata }) => {
         // render component
             <Card className="card__wrapper">
                     <div className="img__wrapper__main">{carddata.show.image?<img src={carddata.show.image && carddata.show.image.medium} alt="tv show image" />:<img src={thumbnailImage} alt="dummy thumbnail image" />}</div>
-                    <CardContent className={`${classes.pb0} ${classes.cardContent} content__wrapper`}>
+                    <CardContent className={`${classes.pb0} ${classes.cardContent}`}>
                         <Typography gutterBottom variant="h6" component="h6" className="genres__name">
                             {carddata.show.name}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed">
+                        <Typography variant="body2" color="textSecondary" component="p" className="lang p-0">
                             {carddata.show.language}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed text__truncate">
                             {carddata.show.summary && carddata.show.summary.replace(/(<([^>]+)>)/ig, "")}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed">
+                        <Typography variant="body2" color="textSecondary" component="p" className="p-0">
                             {carddata.show.url ? <a className="custom_link" href={carddata.show.url} target="_blank">Official Link</a> : null}
                         </Typography>
                     </CardContent>
