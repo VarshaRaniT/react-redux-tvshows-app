@@ -35,6 +35,9 @@ label {
 .p-0{
   padding: 0;
 }
+.w-90{
+  width: 90%;
+}
 input::placeholder {
   color: #b4b4b4;
 }
@@ -162,7 +165,7 @@ a.btn__link {
   }
 }
 .border__frame{
-  border: 14px solid $secondaryColor;
+  border: 10px solid $secondaryColor;
   border-radius: 20px;
   border-bottom-right-radius: 0;
 }
@@ -193,6 +196,13 @@ a.custom_link {
   color: $redColor;
   text-decoration: none;
   margin-bottom: 15px;
+  font-size: 14px;
+}
+.search__content__wrap{
+  height: 100%;
+  a.custom_link {
+  justify-content: center;
+  }
 }
 a.menu__link {
   color: $textColor;
@@ -241,30 +251,43 @@ footer {
 .custom__container__spacing{
   > ul > li{
     padding: 0 7px;
+    .card__wrap {
+      height: 100%;
+  }
     a{
       overflow: hidden;
+      height: 100%;
+      .card__wrapper {
+        height: 100%;
+    }
     }
   }
   .react-multiple-carousel__arrow{
     background-color: $redColor!important;
   }
-  .img__wrapper__main {
-    max-height: 350px;
-    overflow: hidden;
-}
   margin: 10px 15px;
   padding: 10px 0;
   > div{
     padding: 0 10px;
   }
-  .geners_type {
-    font-size: 10px;
-    padding: 3px 5px;
-    background-color: $white;
-    margin: 5px;
-    border-radius: 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  .geners_type__wrap {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .geners_type {
+      font-size: 10px;
+      padding: 3px 6px;
+      background-color: $white;
+      margin: 4px;
+      border-radius: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      display: inline-block;
+      color: $primary;
+  }
 }
+
 
 }
 .card__wrap a {
@@ -272,7 +295,8 @@ footer {
 }
 .card__wrap .img__wrapper__main {
   img{
-    width: 100%;
+    height: 250px;
+    object-fit: cover;
   }
   .MuiCardContent-root {
     padding-top: 0;
@@ -287,7 +311,9 @@ footer {
    
 }
 .card_structure{
-    height: auto;
+    height: 100%;
+    display: grid;
+    padding: 15px;
 }
 .header_background{
     background-color: $bckColor ;

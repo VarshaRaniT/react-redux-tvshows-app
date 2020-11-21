@@ -38,7 +38,8 @@ export interface TvShowDetailedComponentProps extends React.Component<TvShowProp
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        marginTop: "90px"
+        marginTop: "90px",
+        marginBottom:"40px",
     },
     media: {
         height: 360,
@@ -60,7 +61,8 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
     return (
         // render component
         <div className="detailed__component__wrap">
-            {searchlist.length === 0 ? <div className={classes.root}> <Container><Grid container spacing={3} key={tvshowdetailedlist.id}>
+             <div className={classes.root}> 
+            {searchlist.length === 0 ?<Container><Grid container spacing={3} key={tvshowdetailedlist.id}>
                 <Card className="custom__card__wrap">
                     <Grid container spacing={3} item xs={12}>
 
@@ -77,7 +79,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                                     Rating
                                         </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed rating">
-                                    {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average ? <StarIcon className="custom__icon" /> : null}{tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
+                                    {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average ? <StarIcon className="custom__icon" /> : "No Rating"}{tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
                                 </Typography>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     Language
@@ -101,7 +103,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                         </Grid>
                     </Grid>
                 </Card>
-            </Grid></Container></div> : <Carousel swipeable={false} centerMode={true}
+            </Grid></Container>: <Carousel swipeable={false} centerMode={true}
                 draggable={false} responsive={responsive} containerClass="show__container__wrapper custom__container__spacing">
                 {searchlist.map((value: any) => (
                     <Grid key={value.show.id} className="card__wrap">
@@ -109,6 +111,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                     </Grid>
                 ))}
             </Carousel>}
+            </div> 
         </div>
     )
 }
