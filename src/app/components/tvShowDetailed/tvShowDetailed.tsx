@@ -6,7 +6,29 @@ import { getTvShowDetailed } from '../../actions/tvShowAction';
 import { fetchDetailedTvShow } from "../../data/api/detailedTvShow";
 import { makeStyles, Grid, CardContent, Typography, Card, Container } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
-import DetailedCard from "../detailedCard/detailedCard"
+import DetailedCard from "../commonComponents/detailedCard/detailedCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+    superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 export interface TvShowDetailedComponentProps extends React.Component<TvShowProps, TvShowState> {
     tvshowdetailedlist: any;
     getTvShowDetailed: (tvshowdetailedlist: any) => void;
@@ -55,7 +77,7 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                                     Rating
                                         </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed rating">
-                               {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average?  <StarIcon className="custom__icon" />: null}{tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
+                                    {tvshowdetailedlist.rating && tvshowdetailedlist.rating.average ? <StarIcon className="custom__icon" /> : null}{tvshowdetailedlist.rating && tvshowdetailedlist.rating.average}
                                 </Typography>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     Language
@@ -73,14 +95,20 @@ const TvShowDetailedComponent: React.FC<TvShowDetailedComponentProps> = ({ searc
                                     Official Site
                                         </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p" className="desc__text__detailed">
-                                    
                                     <a className="custom_link" href={tvshowdetailedlist.officialSite} target="_blank">Official Link</a>
                                 </Typography>
                             </CardContent>
                         </Grid>
                     </Grid>
                 </Card>
-            </Grid></Container></div> : <DetailedCard carddata={searchlist} />}
+            </Grid></Container></div> : <Carousel swipeable={false} centerMode={true}
+                draggable={false} responsive={responsive} containerClass="show__container__wrapper custom__container__spacing">
+                {searchlist.map((value: any) => (
+                    <Grid key={value.show.id} className="card__wrap">
+                        <DetailedCard carddata={value} />
+                    </Grid>
+                ))}
+            </Carousel>}
         </div>
     )
 }

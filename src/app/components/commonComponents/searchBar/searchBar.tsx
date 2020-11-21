@@ -45,7 +45,7 @@ const SearchBar: React.FC<SearchBarProps> = ({getTvShowDetailed, getSearchTvShow
             <Grid container item xs={12} className="main__search__wrap">
                 <div className="search__show__wrap">
                     <InputComponent fieldType={"text"} fieldlabel={"Search"} onSearchChild={onSearchChange} />
-                    <ButtonComponent btnText={"Search"} onSearchChildClick={onSearchClick} />
+                    <ButtonComponent btnText={"Search"} onHandelclick={onSearchClick} />
                 </div>
             </Grid>
         </div>

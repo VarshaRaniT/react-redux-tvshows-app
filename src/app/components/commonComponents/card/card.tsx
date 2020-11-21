@@ -27,7 +27,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ tvshow }) => {
     return (
         <Card className={`${classes.textCenter} card__wrapper`}>
             <CardActionArea className="card_structure" >
-                <div className="img__wrapper__main"> <img src={tvshow.image && tvshow.image.original} alt="tv show" /></div>
+                <div className="img__wrapper__main"> <img src={tvshow.image.original} alt="tv show" /></div>
                 <CardContent className={classes.cardContent}>
                     <Typography gutterBottom component="h6" className="genres__name">
                         {tvshow.name}

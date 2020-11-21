@@ -5,7 +5,7 @@ import { TvShowProps, TvShowState } from '../../models';
 import { getTvShowList } from '../../actions/tvShowAction';
 import { fetchTvShowList } from "../../data/api/tvShowList";
 import { Link } from "react-router-dom";
-import DetailedCard from "../../components/detailedCard/detailedCard"
+import DetailedCard from "../../components/commonComponents/detailedCard/detailedCard"
 // import material
 import { makeStyles, Grid, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 import CardComponent from "./../../components/commonComponents/card/card";
@@ -85,7 +85,7 @@ const TvShowListUI: React.FC<TvShowListUIProps> = ({ tvshowlist, getTvShowList, 
     })
     //  filter tv show list on the basis of genres
     let filteredAction: any[] = []
-    if (genres == "") {
+    if (genres === "") {
         filteredAction = tvshowlist;
     }
     else {
@@ -125,7 +125,7 @@ const TvShowListUI: React.FC<TvShowListUIProps> = ({ tvshowlist, getTvShowList, 
                         </Select>
                     </FormControl>
                 </div>
-                <Carousel swipeable={false} centerMode={true} 
+                <Carousel swipeable={false} centerMode={true}
                     draggable={false} responsive={responsive} containerClass="show__container__wrapper custom__container__spacing">
                     {sortedArray.map((value: any) => (
                         <Grid key={value.id} className="card__wrap">
@@ -135,7 +135,14 @@ const TvShowListUI: React.FC<TvShowListUIProps> = ({ tvshowlist, getTvShowList, 
                         </Grid>
                     ))}
                 </Carousel>
-            </div> : <DetailedCard carddata={searchlist} />}
+            </div> : <Carousel swipeable={false} centerMode={true}
+                draggable={false} responsive={responsive} containerClass="show__container__wrapper custom__container__spacing">
+                    {searchlist.map((value: any) => (
+                        <Grid key={value.show.id} className="card__wrap">
+                                <DetailedCard carddata={value} />
+                        </Grid>
+                    ))}
+                </Carousel>}
         </div>
     )
 }

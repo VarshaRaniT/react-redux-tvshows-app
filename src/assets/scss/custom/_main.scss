@@ -271,10 +271,6 @@ footer {
 }
 .card__wrap a {
   text-decoration: none;
-  transition: 1s ease-in-out;
-  &:hover{
-    transform: scale(1.2);
-  }
 }
 .card__wrap .img__wrapper__main {
   img{
